@@ -1,6 +1,6 @@
 # Dotfiles
 
-[![Status](https://github.com/thekovie/dotfiles/workflows/dotfiles/badge.svg?branch=main)](https://github.com/thekovie/dotfiles/actions)
+[![Status](https://github.com/thekovie/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/thekovie/dotfiles/actions)
 [![Powered by dotbot][dbshield]][dblink]
 
 [dblink]: https://github.com/anishathalye/dotbot
