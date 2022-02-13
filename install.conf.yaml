@@ -1,0 +1,17 @@
+- defaults:
+    link:
+      create: true
+      force: true
+
+- clean: ['~']
+
+- link:
+    ~/.config/nvim/lua/custom:
+      path: nvim/lua/custom
+    ~/.config/lf/lfrc:
+      path: lf/lfrc
+    ~/.gitconfig:
+      path: git/.gitconfig
+
+- shell:
+  - [git submodule update --remote --recursive --force, Installing submodules]

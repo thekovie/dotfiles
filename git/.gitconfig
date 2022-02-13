@@ -1,0 +1,24 @@
+[user]
+	name = Kovie
+	email = 40118781+thekovie@users.noreply.github.com
+[core]
+	editor = nvim
+	autocrlf = false
+	pager = delta
+	editor = code --wait
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    features = side-by-side line-numbers decorations
+    whitespace-error-style = 22 reverse
+[delta "decorations"]
+    commit-decoration-style = bold yellow box ul
+    file-style = bold yellow ul
+    file-decoration-style = none
+[init]
+	defaultBranch = main
