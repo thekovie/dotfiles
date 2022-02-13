@@ -8,7 +8,7 @@ M.options = {
 }
 
 M.ui = {
-  theme = "catppuccin",
+  theme = "onedark",
 }
 
 M.plugins = {
