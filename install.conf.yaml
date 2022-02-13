@@ -10,6 +10,12 @@
       path: nvim/lua/custom
     ~/.config/lf/lfrc:
       path: lf/lfrc
+    ~/.zshrc:
+      path: zsh/.zshrc
+    ~/.zshenv:
+      path: zsh/.zshenv
+    ~/.p10k.zsh:
+      path: zsh/.p10k.zsh
     ~/.gitconfig:
       path: git/.gitconfig
 
