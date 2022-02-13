@@ -6,7 +6,10 @@
 [dblink]: https://github.com/anishathalye/dotbot
 [dbshield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat
 
-Budots.
+## Pre-requisites
+- LLVM
+- NvChad
+  - `git clone https://github.com/NvChad/NvChad $env:LOCALAPPDATA\nvim`
 
 ## Installation
 
