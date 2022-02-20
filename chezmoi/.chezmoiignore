@@ -1,6 +1,7 @@
 {{ if ne .chezmoi.os "windows" }}
 AppData/
 Documents/PowerShell/
+.yasb/
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
