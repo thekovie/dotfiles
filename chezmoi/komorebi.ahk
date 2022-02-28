@@ -65,8 +65,8 @@ Run, komorebic.exe float-rule class SunAwtDialog, , Hide
 Run, komorebic.exe float-rule title "Control Panel", , Hide
 ; Always float Task Manager, matching on class
 Run, komorebic.exe float-rule class TaskManagerWindow, , Hide
-; Always float Process Hacker, matching on class
-Run, komorebic.exe float-rule class "ProcessHacker", , Hide
+; Always float Process Hacker, matching on exe
+Run, komorebic.exe float-rule exe ProcessHacker.exe, , Hide
 ; Always float "Credential Dialog Xaml Host" class
 Run, komorebic.exe float-rule class "Credential Dialog Xaml Host", , Hide
 ; Always float "Command Prompt" class
@@ -85,6 +85,9 @@ Run, komorebic.exe float-rule exe PowerToys.ColorPickerUI.exe, , Hide
 Run, komorebic.exe float-rule exe DiscordPTB.exe, , Hide
 Run, komorebic.exe float-rule exe Spotify.exe, , Hide
 Run, komorebic.exe float-rule exe Zoom.exe, , Hide
+Run, komorebic.exe float-rule exe steam.exe, , Hide
+Run, komorebic.exe float-rule exe obs64.exe, , Hide
+Run, komorebic.exe float-rule title scoop-tray, , Hide
 
 
 ; Always manage forcibly these applications that don't automatically get picked up by komorebi
