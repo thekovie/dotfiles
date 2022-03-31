@@ -84,10 +84,10 @@ Run, komorebic.exe float-rule exe 1Password.exe, , Hide
 Run, komorebic.exe float-rule exe PowerToys.ColorPickerUI.exe, , Hide
 Run, komorebic.exe float-rule exe DiscordPTB.exe, , Hide
 Run, komorebic.exe float-rule exe Spotify.exe, , Hide
-Run, komorebic.exe float-rule exe Zoom.exe, , Hide
 Run, komorebic.exe float-rule exe steam.exe, , Hide
 Run, komorebic.exe float-rule exe obs64.exe, , Hide
 Run, komorebic.exe float-rule title scoop-tray, , Hide
+Run, komorebic.exe float-rule title "Zoom Cloud Meetings", , Hide
 
 
 ; Always manage forcibly these applications that don't automatically get picked up by komorebi
@@ -108,6 +108,12 @@ Run, komorebic.exe identify-tray-application exe kleopatra.exe, , Hide
 Run, komorebic.exe identify-tray-application exe OpenRGB.exe, , Hide
 Run, komorebic.exe identify-tray-application exe Slack.exe, , Hide
 Run, komorebic.exe identify-tray-application exe Medal.exe, , Hide
+Run, komorebic.exe identify-tray-application exe Telegram.exe, , Hide
+Run, komorebic.exe identify-tray-application exe Todoist.exe, , Hide  
+Run, komorebic.exe identify-tray-application exe Zoom.exe, , Hide
+Run, komorebic.exe identify-tray-application title Zoom, , Hide  
+
+
 
 ; Identify applications that have overflowing borders
 Run, komorebic.exe identify-border-overflow exe Discord.exe, , Hide

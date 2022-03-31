@@ -2,6 +2,8 @@ local M = {}
 
 local userPlugins = require "custom.plugins"
 
+local cmp = require "cmp"
+
 M.options = {
   clipboard = "",
   relativenumber = true
@@ -54,6 +56,9 @@ M.plugins = {
 
           return vim_item
         end,
+      },
+      mapping = {
+        ["<CR>"] = cmp.mapping.confirm { select = false },
       },
       sources = {
         { name = "copilot" },
