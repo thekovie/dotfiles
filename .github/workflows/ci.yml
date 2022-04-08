@@ -33,6 +33,6 @@ jobs:
       contents: write
     if: ${{ github.event_name == 'pull_request' && github.actor == 'dependabot[bot]' }}
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.0.2
+      - uses: fastify/github-action-merge-dependabot@v3.1.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
