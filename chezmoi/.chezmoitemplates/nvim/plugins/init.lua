@@ -1,123 +1,119 @@
 return {
-   {"jeffkreeftmeijer/vim-numbertoggle"},
-   {
-      "karb94/neoscroll.nvim",
-      opt = true,
+   -- Core plugins
+   ["lukas-reineke/indent-blankline.nvim"] = {
+      cond = not_in_vscode,
+   },
+   ["NvChad/nvim-colorizer.lua"] = {
+      cond = not_in_vscode,
+   },
+   ["nvim-treesitter/nvim-treesitter"] = {
+      cond = not_in_vscode,
+   },
+   ["nvim-telescope/telescope.nvim"] = {
+      cond = not_in_vscode,
+   },
+   -- Extra builtin plugins
+   ["goolord/alpha-nvim"] = {
+      disable = false,
+      cond = not_in_vscode,
+   },
+   -- User plugins
+   ["sitiom/nvim-numbertoggle"] = {
       config = function()
-         require"neoscroll".setup()
+         require("numbertoggle").setup()
       end,
-      setup = function()
-         require"core.utils".packer_lazy_load "neoscroll.nvim"
+   },
+   ["NMAC427/guess-indent.nvim"] = {
+      config = function()
+         require("guess-indent").setup {}
       end,
    },
-   {"tpope/vim-sleuth"},
-   {
-      'kevinhwang91/nvim-hlslens',
+   ["kevinhwang91/nvim-hlslens"] = {
+      after = "nvim-scrollbar",
+      cond = not_in_vscode,
       config = function()
-         require"custom.plugins.configs.nvim-hlslens".setup()
-      end
+         require("scrollbar.handlers.search").setup()
+      end,
    },
-   {
-      "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
+   ["tpope/vim-repeat"] = {},
+   ["kylechui/nvim-surround"] = {
       config = function()
-         require"todo-comments".setup()
-      end
+         require("nvim-surround").setup {}
+      end,
    },
-   {"tpope/vim-repeat"},
-   {
-      "ur4ltz/surround.nvim",
+   ["tpope/vim-unimpaired"] = {},
+   ["winston0410/range-highlight.nvim"] = {
+      requires = "winston0410/cmd-parser.nvim",
       config = function()
-         require"surround".setup{ mappings_style = "surround" }
-      end
+         require("range-highlight").setup {}
+      end,
    },
-   {"tpope/vim-unimpaired"},
-   {
-      "winston0410/range-highlight.nvim",
-      requires = 'winston0410/cmd-parser.nvim',
-      config = function()
-         require'range-highlight'.setup{}
-      end
+   ["yamatsum/nvim-cursorline"] = {
+      cond = not_in_vscode,
    },
-   {"yamatsum/nvim-cursorline"},
-   {
-      "lambdalisue/suda.vim",
+   ["lambdalisue/suda.vim"] = {
       config = function()
          vim.g.suda_smart_edit = 1
-      end
+      end,
+      cond = not_in_vscode,
    },
-   {
-      "petertriho/nvim-scrollbar",
-      after = 'nvim-hlslens',
+   ["petertriho/nvim-scrollbar"] = {
       config = function()
-         require"scrollbar".setup()
-         require"scrollbar.handlers.search".setup()
-      end
+         require("scrollbar").setup()
+      end,
+      cond = not_in_vscode,
    },
-   {
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      after = "nvim-treesitter",
-      config = function()
-         require'nvim-treesitter.configs'.setup {
-            context_commentstring = {
-               enable = true,
-               enable_autocmd = false,
-            }
-         }
-      end
+   ["VebbNix/lf-vim"] = {},
+   ["gpanders/editorconfig.nvim"] = {
+      cond = not_in_vscode,
    },
-   {"VebbNix/lf-vim"},
-   {"gpanders/editorconfig.nvim"},
-   {
-      "andweeb/presence.nvim",
+   ["andweeb/presence.nvim"] = {
       config = function()
-         require"presence":setup { main_image = "file" }
+         require("presence"):setup { main_image = "file" }
       end,
    },
-   { "raghur/vim-ghost", run = ":GhostInstall" },
-   {
-      "luukvbaal/stabilize.nvim",
-      config = function() require"stabilize".setup() end
-   },
-   {"williamboman/nvim-lsp-installer"},
-   {
-      "j-hui/fidget.nvim",
+   ["luukvbaal/stabilize.nvim"] = {
       config = function()
-         require"fidget".setup {
+         require("stabilize").setup()
+      end,
+      cond = not_in_vscode,
+   },
+   ["j-hui/fidget.nvim"] = {
+      config = function()
+         require("fidget").setup {
             window = {
                blend = 0,
-            }
+            },
          }
       end,
+      cond = not_in_vscode,
    },
-   {
-      "gelfand/copilot.vim",
+   ["github/copilot.vim"] = { -- Only for authenticating with copilot
+      opt = true,
+   },
+   ["zbirenbaum/copilot.lua"] = {
+      event = { "VimEnter" },
       config = function()
-         -- Copilot assume mapped
-         vim.g.copilot_assume_mapped = true
-         vim.g.copilot_no_tab_map = true
+         vim.defer_fn(function()
+            require("copilot").setup()
+         end, 100)
       end,
    },
-   {
-      "jose-elias-alvarez/null-ls.nvim",
+   ["zbirenbaum/copilot-cmp"] = {
+      after = "copilot.lua",
+      module = "copilot_cmp",
+   },
+   ["jose-elias-alvarez/null-ls.nvim"] = {
       requires = "nvim-lua/plenary.nvim",
       after = "nvim-lspconfig",
       config = function()
-         require"custom.plugins.configs.null-ls".setup()
-      end
+         require("custom.plugins.configs.null-ls").setup()
+      end,
+      cond = not_in_vscode,
    },
-   {"hrsh7th/cmp-copilot"},
-   {
-      "p00f/nvim-ts-rainbow",
-      after = "nvim-treesitter"
+   ["p00f/nvim-ts-rainbow"] = {
+      after = "nvim-treesitter",
+      cond = not_in_vscode,
    },
-   {
-      "jvgrootveld/telescope-zoxide",
-      after = "telescope.nvim",
-      requires = "nvim-lua/popup.nvim",
-      config =function ()
-         require"telescope".load_extension("zoxide")
-      end
-   },
-   {"alker0/chezmoi.vim"}
+   ["alker0/chezmoi.vim"] = {},
 }

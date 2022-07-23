@@ -1,21 +1,20 @@
 local M = {}
 
 M.setup_lsp = function(attach, capabilities)
-  local lsp_installer = require "nvim-lsp-installer"
+   if vim.g.vscode then
+      return
+   end
 
-  lsp_installer.on_server_ready(function(server)
-    local opts = {
-      on_attach = attach,
-      capabilities = capabilities,
-      flags = {
-        debounce_text_changes = 150,
-      },
-      settings = {},
-    }
+   local lspconfig = require "lspconfig"
 
-    server:setup(opts)
-    vim.cmd [[ do User LspAttachBuffers ]]
-  end)
+   local servers = { "html", "cssls", "clangd" }
+
+   for _, lsp in ipairs(servers) do
+      lspconfig[lsp].setup {
+         on_attach = attach,
+         capabilities = capabilities,
+      }
+   end
 end
 
 return M
