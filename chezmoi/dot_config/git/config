@@ -1,6 +1,7 @@
 [user]
-	name = Kovie
-	email = 40118781+thekovie@users.noreply.github.com
+	name = John Kovie Nino
+	email = thekovie@gmail.com
+	signingKey = 88375C88CD37D7A48C3C3A6FAD84FC4071C66EE5
 [core]
 	editor = nvim
 	autocrlf = false
@@ -22,3 +23,4 @@
     file-decoration-style = none
 [init]
 	defaultBranch = main
+	

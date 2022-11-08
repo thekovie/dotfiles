@@ -4,8 +4,9 @@ Documents/PowerShell/
 .yasb/
 {{ end }}
 
-{{ if ne .chezmoi.os "linux" }}
-.config/
+{{ if eq .chezmoi.os "windows" }}
+!.config/git/
+.config/*
 .p10k.zsh
 .zshenv
 .zshrc
