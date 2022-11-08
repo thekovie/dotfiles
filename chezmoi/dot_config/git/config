@@ -23,4 +23,5 @@
     file-decoration-style = none
 [init]
 	defaultBranch = main
-	
+[commit]
+    gpgsign = true
