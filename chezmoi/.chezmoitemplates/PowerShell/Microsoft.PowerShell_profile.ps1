@@ -38,5 +38,4 @@ Set-PSReadLineKeyHandler -Chord Ctrl+o -ScriptBlock {
 
 
 clear
-winfetch
-
+fastfetch
